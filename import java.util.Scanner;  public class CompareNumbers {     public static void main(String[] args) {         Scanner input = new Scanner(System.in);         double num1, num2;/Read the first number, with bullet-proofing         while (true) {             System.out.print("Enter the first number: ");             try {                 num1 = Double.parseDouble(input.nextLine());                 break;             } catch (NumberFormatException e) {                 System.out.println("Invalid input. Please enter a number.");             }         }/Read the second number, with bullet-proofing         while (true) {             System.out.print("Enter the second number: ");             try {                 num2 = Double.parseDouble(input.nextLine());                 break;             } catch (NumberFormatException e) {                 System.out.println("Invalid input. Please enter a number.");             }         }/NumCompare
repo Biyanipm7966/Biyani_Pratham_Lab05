@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class CompareNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double num1, num2;
+
+        // Read the first number, with bullet-proofing
+        while (true) {
+            System.out.print("Enter the first number: ");
+            try {
+                num1 = Double.parseDouble(input.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            }
+        }
+
+        // Read the second number, with bullet-proofing
+        while (true) {
+            System.out.print("Enter the second number: ");
+            try {
+                num2 = Double.parseDouble(input.nextLine());
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number.");
+            }
+        }
+
+        // Compare the numbers
+        if (num1 == num2) {
+            System.out.println("The numbers are equal.");
+        } else if (num1 < num2) {
+            System.out.println(num1 + " is less than " + num2);
+        } else {
+            System.out.println(num2 + " is less than " + num1);
+        }
+
+        input.close();
+    }
+}
